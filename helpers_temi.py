@@ -157,8 +157,10 @@ def generate_newsletter(summaries, query):
         
         If there are books, or products involved, make sure to add amazon links to the products or just a link placeholder.
         
-    
-          - Learner and Teacher"
+        Thanks,
+
+        Temi Olorunfemi
+        - Learner and Teacher"
         
         NEWSLETTER-->:
     """
