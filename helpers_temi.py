@@ -42,7 +42,7 @@ def pick_best_articles_urls(response_json, query):
     # create llm to choose best articles
     llm = ChatOpenAI(temperature=0.7)
     template = """ 
-      You are a world class journalist, researcher, tech, Software Engineer, Developer and a online course creator
+      You are a world class journalist, researcher, tech, Software Engineer, Developer with a PHD degree
       , you are amazing at finding the most interesting and relevant, useful articles in certain topics.
       
       QUERY RESPONSE:{response_str}
@@ -100,7 +100,7 @@ def summarizer(db, query, k=4):
     llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=.7)
     template = """
        {docs}
-        As a world class journalist, researcher, article, newsletter and blog writer, 
+        As a world class journalist and researcher, 
         you will summarize the text above in order to create a 
         newsletter around {query}.
         This newsletter will be sent as an email.  The format is going to be like
@@ -132,7 +132,7 @@ def generate_newsletter(summaries, query):
                      temperature=.7)
     template = """
     {summaries_str}
-        As a world class journalist, researcher, article, newsletter and blog writer, 
+        As a world class journalist and researcher,  
         you'll use the text above as the context about {query}
         to write an excellent newsletter to be sent to subscribers about {query}.
         
@@ -157,8 +157,7 @@ def generate_newsletter(summaries, query):
         
         If there are books, or products involved, make sure to add amazon links to the products or just a link placeholder.
         
-        As a signoff, write a clever quote related to learning, general wisdom, living a good life.  Be creative with this one - and then,
-        Sign with "Paulo 
+    
           - Learner and Teacher"
         
         NEWSLETTER-->:
